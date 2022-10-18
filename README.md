@@ -364,3 +364,43 @@ public class DailyAnalysisInput {
 
 }
 ------------------
+@JsonInclude(Include.NON_NULL)
+public class CXPResponse<D> implements Serializable {
+    private static final long serialVersionUID = 1L;
+    private Meta meta;
+    @JsonInclude(Include.NON_EMPTY)
+    private List<CXPError> errors;
+    private D data;
+
+    public CXPResponse() {
+    }
+
+    public Meta getMeta() {
+        return this.meta;
+    }
+
+    public void setMeta(Meta meta) {
+        this.meta = meta;
+    }
+
+    public D getData() {
+        return this.data;
+    }
+
+    public void setData(D data) {
+        this.data = data;
+    }
+
+    public List<CXPError> getErrors() {
+        if (this.errors == null) {
+            this.errors = new ArrayList();
+        }
+
+        return this.errors;
+    }
+
+    public void addError(CXPError error) {
+        this.getErrors().add(error);
+    }
+}
+-----------------
