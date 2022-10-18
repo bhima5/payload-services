@@ -404,6 +404,8 @@ public class CXPResponse<D> implements Serializable {
     }
 }
 -----------------
+ 
+ 
 @Data
 public class Summary {
 
