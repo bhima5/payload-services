@@ -236,3 +236,131 @@ public class DailyAnalysisHelper {
 
 
 }
+
+
+-----
+public class HelperToConvertToJson {
+
+    Summary summary;
+    List<DataSync> dataSync;
+    List<DataCompare> dataCompare;
+    List<ApiCompare> apiCompare;
+}
+
+------------
+@Data
+public class ApiCompare {
+
+    @JsonProperty(value = "Flow_Type")
+    private String Flow_Type;
+    @JsonProperty(value = "api_type")
+    private String Api_Type;
+    @JsonProperty(value = "success")
+    private int Success;
+    @JsonProperty(value = "failed")
+    private int Failure;
+}
+
+-----------------------
+@Data
+public class DataCompare {
+
+    @JsonProperty(value = "Flow_Type")
+    private String Flow_Type;
+    @JsonProperty(value="milestones")
+    private String Milestone;
+    @JsonProperty(value="success")
+    private int Success;
+    @JsonProperty(value="failure")
+    private int Failure;
+}
+
+-------
+@Data
+@Component
+public class DataSync {
+
+    @JsonProperty(value = "Flow_Type")
+    private String Flow_Type;
+    @JsonProperty(value = "type_def_name")
+    public String Type_Def_Name;
+    @JsonProperty(value = "success")
+    public int Success;
+    @JsonProperty(value = "failure")
+    public int Failure;
+    @JsonProperty(value = "in_processing")
+    public int InProgress;
+}
+-------------
+@Data
+public class DataSyncCount {
+    int success;
+    int failure;
+    int in_processing;
+    String Type;
+    public DataSyncCount(int success, int failure, int inProgress) {
+        this.success=success;
+        this.failure=failure;
+        this.in_processing=inProgress;
+    }
+    public DataSyncCount(int success, int failure, int inProgress,String type) {
+        this.success=success;
+        this.failure=failure;
+        this.in_processing=inProgress;
+        this.Type=type;
+    }
+}
+---------------------
+
+@Data
+public class DataCompareCount {
+    int success;
+    int failure;
+
+    String type;
+    public DataCompareCount(int success, int failure) {
+        this.success=success;
+        this.failure=failure;
+    }
+    public DataCompareCount(int success, int failure,String type) {
+        this.success=success;
+        this.failure=failure;
+        this.type=type;
+    }
+}
+---------------
+
+@Data
+public class ApiCompareCount {
+    int success;
+    int failure;
+
+    String type;
+    public ApiCompareCount(int success, int failure) {
+        this.success=success;
+        this.failure=failure;
+    }
+
+    public ApiCompareCount(int success, int failure,String type) {
+        this.success=success;
+        this.failure=failure;
+        this.type=type;
+    }
+}
+--------------------------
+@Data
+public class OrderAndType {
+
+    private int ordersCount;
+    private String type;
+}
+--------------------
+@Data
+@Component
+public class DailyAnalysisInput {
+
+    @JsonProperty(value="orderFlow")
+    public ArrayList<OrderFlow> orderFlow;
+
+}
+------------------
