@@ -1,0 +1,172 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
+package onevz.cxp.core.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import java.util.Date;
+import javax.validation.constraints.Size;
+
+@JsonInclude(Include.NON_NULL)
+public class Meta {
+    private @Size(
+    min = 0,
+    max = 100
+) String client;
+    private @Size(
+    min = 0,
+    max = 100
+) String user;
+    private @Size(
+    min = 0,
+    max = 200
+) String clientCorrrelationId;
+    private Date timestamp;
+    private @Size(
+    min = 0,
+    max = 200
+) String cxpCorrelationId;
+
+    public Meta() {
+    }
+
+    public String getClient() {
+        return this.client;
+    }
+
+    public String getUser() {
+        return this.user;
+    }
+
+    public String getClientCorrrelationId() {
+        return this.clientCorrrelationId;
+    }
+
+    public Date getTimestamp() {
+        return this.timestamp;
+    }
+
+    public String getCxpCorrelationId() {
+        return this.cxpCorrelationId;
+    }
+
+    public void setClient(String client) {
+        this.client = client;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public void setClientCorrrelationId(String clientCorrrelationId) {
+        this.clientCorrrelationId = clientCorrrelationId;
+    }
+
+    public void setTimestamp(Date timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public void setCxpCorrelationId(String cxpCorrelationId) {
+        this.cxpCorrelationId = cxpCorrelationId;
+    }
+
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        } else if (!(o instanceof Meta)) {
+            return false;
+        } else {
+            Meta other = (Meta)o;
+            if (!other.canEqual(this)) {
+                return false;
+            } else {
+                label71: {
+                    Object this$client = this.getClient();
+                    Object other$client = other.getClient();
+                    if (this$client == null) {
+                        if (other$client == null) {
+                            break label71;
+                        }
+                    } else if (this$client.equals(other$client)) {
+                        break label71;
+                    }
+
+                    return false;
+                }
+
+                Object this$user = this.getUser();
+                Object other$user = other.getUser();
+                if (this$user == null) {
+                    if (other$user != null) {
+                        return false;
+                    }
+                } else if (!this$user.equals(other$user)) {
+                    return false;
+                }
+
+                label57: {
+                    Object this$clientCorrrelationId = this.getClientCorrrelationId();
+                    Object other$clientCorrrelationId = other.getClientCorrrelationId();
+                    if (this$clientCorrrelationId == null) {
+                        if (other$clientCorrrelationId == null) {
+                            break label57;
+                        }
+                    } else if (this$clientCorrrelationId.equals(other$clientCorrrelationId)) {
+                        break label57;
+                    }
+
+                    return false;
+                }
+
+                Object this$timestamp = this.getTimestamp();
+                Object other$timestamp = other.getTimestamp();
+                if (this$timestamp == null) {
+                    if (other$timestamp != null) {
+                        return false;
+                    }
+                } else if (!this$timestamp.equals(other$timestamp)) {
+                    return false;
+                }
+
+                Object this$cxpCorrelationId = this.getCxpCorrelationId();
+                Object other$cxpCorrelationId = other.getCxpCorrelationId();
+                if (this$cxpCorrelationId == null) {
+                    if (other$cxpCorrelationId == null) {
+                        return true;
+                    }
+                } else if (this$cxpCorrelationId.equals(other$cxpCorrelationId)) {
+                    return true;
+                }
+
+                return false;
+            }
+        }
+    }
+
+    protected boolean canEqual(Object other) {
+        return other instanceof Meta;
+    }
+
+    public int hashCode() {
+        int PRIME = true;
+        int result = 1;
+        Object $client = this.getClient();
+        result = result * 59 + ($client == null ? 43 : $client.hashCode());
+        Object $user = this.getUser();
+        result = result * 59 + ($user == null ? 43 : $user.hashCode());
+        Object $clientCorrrelationId = this.getClientCorrrelationId();
+        result = result * 59 + ($clientCorrrelationId == null ? 43 : $clientCorrrelationId.hashCode());
+        Object $timestamp = this.getTimestamp();
+        result = result * 59 + ($timestamp == null ? 43 : $timestamp.hashCode());
+        Object $cxpCorrelationId = this.getCxpCorrelationId();
+        result = result * 59 + ($cxpCorrelationId == null ? 43 : $cxpCorrelationId.hashCode());
+        return result;
+    }
+
+    public String toString() {
+        return "Meta(client=" + this.getClient() + ", user=" + this.getUser() + ", clientCorrrelationId=" + this.getClientCorrrelationId() + ", timestamp=" + this.getTimestamp() + ", cxpCorrelationId=" + this.getCxpCorrelationId() + ")";
+    }
+}
