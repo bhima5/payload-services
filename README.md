@@ -404,3 +404,20 @@ public class CXPResponse<D> implements Serializable {
     }
 }
 -----------------
+@Data
+public class Summary {
+
+   List<OrderAndType>  orderAndType;
+   List<DataSyncCount> datasync;
+    List<DataCompareCount> datacompare;
+    List<ApiCompareCount> apicompare;
+
+    public Summary(List<OrderAndType> orderAndType,List<DataSyncCount> ds, List<DataCompareCount> dc, List<ApiCompareCount> ac) {
+        this.orderAndType=orderAndType;
+        this.datasync=ds;
+        this.datacompare=dc;
+        this.apicompare=ac;
+    }
+}
+ 
+ ----------------
