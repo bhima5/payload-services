@@ -1,0 +1,344 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
+package onevz.cxp.core.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import java.io.Serializable;
+import java.util.List;
+import javax.validation.constraints.Size;
+import onevz.cxp.interfaces.NorthstarError;
+
+@JsonInclude(Include.NON_NULL)
+public class CXPError implements Serializable, NorthstarError {
+    private static final long serialVersionUID = 1L;
+    private @Size(
+    min = 0,
+    max = 50
+) String namespace;
+    private @Size(
+    min = 0,
+    max = 50
+) String name;
+    private @Size(
+    min = 0,
+    max = 50
+) String id;
+    private @Size(
+    min = 0,
+    max = 50
+) String debug_id;
+    private @Size(
+    min = 0,
+    max = 200
+) String message;
+    private @Size(
+    min = 0,
+    max = 50
+) String category;
+    private @Size(
+    min = 0,
+    max = 200
+) String information_link;
+    private List<ErrorDetail> details;
+
+    /** @deprecated */
+    @Deprecated
+    public CXPError(String namespace, String name, String id, String debug_id, String message, String information_link, List<ErrorDetail> details) {
+        this.namespace = namespace;
+        this.name = name;
+        this.id = id;
+        this.debug_id = debug_id;
+        this.message = message;
+        this.information_link = information_link;
+        this.details = details;
+    }
+
+    public static CXPErrorBuilder builder() {
+        return new CXPErrorBuilder();
+    }
+
+    public String getNamespace() {
+        return this.namespace;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public String getDebug_id() {
+        return this.debug_id;
+    }
+
+    public String getMessage() {
+        return this.message;
+    }
+
+    public String getCategory() {
+        return this.category;
+    }
+
+    public String getInformation_link() {
+        return this.information_link;
+    }
+
+    public List<ErrorDetail> getDetails() {
+        return this.details;
+    }
+
+    public void setNamespace(String namespace) {
+        this.namespace = namespace;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setDebug_id(String debug_id) {
+        this.debug_id = debug_id;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public void setInformation_link(String information_link) {
+        this.information_link = information_link;
+    }
+
+    public void setDetails(List<ErrorDetail> details) {
+        this.details = details;
+    }
+
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        } else if (!(o instanceof CXPError)) {
+            return false;
+        } else {
+            CXPError other = (CXPError)o;
+            if (!other.canEqual(this)) {
+                return false;
+            } else {
+                label107: {
+                    Object this$namespace = this.getNamespace();
+                    Object other$namespace = other.getNamespace();
+                    if (this$namespace == null) {
+                        if (other$namespace == null) {
+                            break label107;
+                        }
+                    } else if (this$namespace.equals(other$namespace)) {
+                        break label107;
+                    }
+
+                    return false;
+                }
+
+                Object this$name = this.getName();
+                Object other$name = other.getName();
+                if (this$name == null) {
+                    if (other$name != null) {
+                        return false;
+                    }
+                } else if (!this$name.equals(other$name)) {
+                    return false;
+                }
+
+                Object this$id = this.getId();
+                Object other$id = other.getId();
+                if (this$id == null) {
+                    if (other$id != null) {
+                        return false;
+                    }
+                } else if (!this$id.equals(other$id)) {
+                    return false;
+                }
+
+                label86: {
+                    Object this$debug_id = this.getDebug_id();
+                    Object other$debug_id = other.getDebug_id();
+                    if (this$debug_id == null) {
+                        if (other$debug_id == null) {
+                            break label86;
+                        }
+                    } else if (this$debug_id.equals(other$debug_id)) {
+                        break label86;
+                    }
+
+                    return false;
+                }
+
+                label79: {
+                    Object this$message = this.getMessage();
+                    Object other$message = other.getMessage();
+                    if (this$message == null) {
+                        if (other$message == null) {
+                            break label79;
+                        }
+                    } else if (this$message.equals(other$message)) {
+                        break label79;
+                    }
+
+                    return false;
+                }
+
+                label72: {
+                    Object this$category = this.getCategory();
+                    Object other$category = other.getCategory();
+                    if (this$category == null) {
+                        if (other$category == null) {
+                            break label72;
+                        }
+                    } else if (this$category.equals(other$category)) {
+                        break label72;
+                    }
+
+                    return false;
+                }
+
+                Object this$information_link = this.getInformation_link();
+                Object other$information_link = other.getInformation_link();
+                if (this$information_link == null) {
+                    if (other$information_link != null) {
+                        return false;
+                    }
+                } else if (!this$information_link.equals(other$information_link)) {
+                    return false;
+                }
+
+                Object this$details = this.getDetails();
+                Object other$details = other.getDetails();
+                if (this$details == null) {
+                    if (other$details != null) {
+                        return false;
+                    }
+                } else if (!this$details.equals(other$details)) {
+                    return false;
+                }
+
+                return true;
+            }
+        }
+    }
+
+    protected boolean canEqual(Object other) {
+        return other instanceof CXPError;
+    }
+
+    public int hashCode() {
+        int PRIME = true;
+        int result = 1;
+        Object $namespace = this.getNamespace();
+        result = result * 59 + ($namespace == null ? 43 : $namespace.hashCode());
+        Object $name = this.getName();
+        result = result * 59 + ($name == null ? 43 : $name.hashCode());
+        Object $id = this.getId();
+        result = result * 59 + ($id == null ? 43 : $id.hashCode());
+        Object $debug_id = this.getDebug_id();
+        result = result * 59 + ($debug_id == null ? 43 : $debug_id.hashCode());
+        Object $message = this.getMessage();
+        result = result * 59 + ($message == null ? 43 : $message.hashCode());
+        Object $category = this.getCategory();
+        result = result * 59 + ($category == null ? 43 : $category.hashCode());
+        Object $information_link = this.getInformation_link();
+        result = result * 59 + ($information_link == null ? 43 : $information_link.hashCode());
+        Object $details = this.getDetails();
+        result = result * 59 + ($details == null ? 43 : $details.hashCode());
+        return result;
+    }
+
+    public CXPError() {
+    }
+
+    public CXPError(String namespace, String name, String id, String debug_id, String message, String category, String information_link, List<ErrorDetail> details) {
+        this.namespace = namespace;
+        this.name = name;
+        this.id = id;
+        this.debug_id = debug_id;
+        this.message = message;
+        this.category = category;
+        this.information_link = information_link;
+        this.details = details;
+    }
+
+    public String toString() {
+        return "CXPError(namespace=" + this.getNamespace() + ", name=" + this.getName() + ", id=" + this.getId() + ", debug_id=" + this.getDebug_id() + ", message=" + this.getMessage() + ", category=" + this.getCategory() + ", information_link=" + this.getInformation_link() + ", details=" + this.getDetails() + ")";
+    }
+
+    public static class CXPErrorBuilder {
+        private String namespace;
+        private String name;
+        private String id;
+        private String debug_id;
+        private String message;
+        private String category;
+        private String information_link;
+        private List<ErrorDetail> details;
+
+        CXPErrorBuilder() {
+        }
+
+        public CXPErrorBuilder namespace(String namespace) {
+            this.namespace = namespace;
+            return this;
+        }
+
+        public CXPErrorBuilder name(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public CXPErrorBuilder id(String id) {
+            this.id = id;
+            return this;
+        }
+
+        public CXPErrorBuilder debug_id(String debug_id) {
+            this.debug_id = debug_id;
+            return this;
+        }
+
+        public CXPErrorBuilder message(String message) {
+            this.message = message;
+            return this;
+        }
+
+        public CXPErrorBuilder category(String category) {
+            this.category = category;
+            return this;
+        }
+
+        public CXPErrorBuilder information_link(String information_link) {
+            this.information_link = information_link;
+            return this;
+        }
+
+        public CXPErrorBuilder details(List<ErrorDetail> details) {
+            this.details = details;
+            return this;
+        }
+
+        public CXPError build() {
+            return new CXPError(this.namespace, this.name, this.id, this.debug_id, this.message, this.category, this.information_link, this.details);
+        }
+
+        public String toString() {
+            return "CXPError.CXPErrorBuilder(namespace=" + this.namespace + ", name=" + this.name + ", id=" + this.id + ", debug_id=" + this.debug_id + ", message=" + this.message + ", category=" + this.category + ", information_link=" + this.information_link + ", details=" + this.details + ")";
+        }
+    }
+}
