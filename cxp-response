@@ -1,0 +1,52 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
+package onevz.cxp.core.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+@JsonInclude(Include.NON_NULL)
+public class CXPResponse<D> implements Serializable {
+    private static final long serialVersionUID = 1L;
+    private Meta meta;
+    @JsonInclude(Include.NON_EMPTY)
+    private List<CXPError> errors;
+    private D data;
+
+    public CXPResponse() {
+    }
+
+    public Meta getMeta() {
+        return this.meta;
+    }
+
+    public void setMeta(Meta meta) {
+        this.meta = meta;
+    }
+
+    public D getData() {
+        return this.data;
+    }
+
+    public void setData(D data) {
+        this.data = data;
+    }
+
+    public List<CXPError> getErrors() {
+        if (this.errors == null) {
+            this.errors = new ArrayList();
+        }
+
+        return this.errors;
+    }
+
+    public void addError(CXPError error) {
+        this.getErrors().add(error);
+    }
+}
